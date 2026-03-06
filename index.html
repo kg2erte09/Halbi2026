@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,10 +11,9 @@
 
 body{
 margin:0;
-font-family:Arial;
+font-family:Arial, sans-serif;
 background:#f5f5f5;
 text-align:center;
-overflow-x:hidden;
 }
 
 /* COVER */
@@ -23,20 +23,18 @@ height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-background:linear-gradient(135deg,#1c6b57,#38b2ac);
 flex-direction:column;
+background:linear-gradient(135deg,#1c6b57,#38b2ac);
 color:white;
 }
 
-/* ENVELOPE */
-
 .envelope{
-position:relative;
 width:200px;
 height:120px;
-background:#fff;
-border-radius:6px;
+background:white;
+position:relative;
 cursor:pointer;
+border-radius:6px;
 }
 
 .envelope:before{
@@ -44,8 +42,6 @@ content:'';
 position:absolute;
 top:-60px;
 left:0;
-width:0;
-height:0;
 border-left:100px solid transparent;
 border-right:100px solid transparent;
 border-bottom:60px solid white;
@@ -82,14 +78,13 @@ box-shadow:0 10px 20px rgba(0,0,0,0.1);
 .slider{
 max-width:700px;
 margin:auto;
-position:relative;
 overflow:hidden;
-border-radius:12px;
+position:relative;
+border-radius:10px;
 }
 
 .slides{
 display:flex;
-transition:transform 0.5s ease;
 }
 
 .slides img{
@@ -106,20 +101,15 @@ color:white;
 border:none;
 padding:10px 15px;
 cursor:pointer;
-font-size:20px;
+font-size:18px;
 }
 
-.prev{
-left:10px;
-}
-
-.next{
-right:10px;
-}
+.prev{ left:10px; }
+.next{ right:10px; }
 
 /* FORM */
 
-input,textarea{
+input, textarea{
 width:100%;
 padding:10px;
 margin-top:10px;
@@ -138,23 +128,22 @@ cursor:pointer;
 }
 
 </style>
-
 </head>
 
 <body>
 
-<!-- MUSIK -->
 <audio id="musik" loop>
-<source src="musik.mp3" type="audio/mp3">
+<source src="musik.mp3" type="audio/mpeg">
 </audio>
 
 <!-- COVER -->
+
 <div class="cover" id="cover">
 
 <h1>Halal Bi Halal</h1>
 <h2>RT 09 Klipang Green 2</h2>
 
-<div class="envelope" id="envelope" onclick="bukaUndangan()"></div>
+<div class="envelope" id="envelope"></div>
 
 <div class="envelope-text">
 Klik amplop untuk membuka undangan
@@ -162,7 +151,7 @@ Klik amplop untuk membuka undangan
 
 </div>
 
-<!-- ISI UNDANGAN -->
+<!-- ISI -->
 
 <div id="isi" style="display:none">
 
@@ -172,24 +161,17 @@ Klik amplop untuk membuka undangan
 
 <h2>Assalamu'alaikum Wr. Wb.</h2>
 
-<p>
-Dalam rangka mempererat tali silaturahmi,
-kami mengundang Bapak/Ibu/Saudara untuk menghadiri
-</p>
+<p>Kami mengundang Bapak/Ibu/Saudara untuk menghadiri acara</p>
 
 <h2>Halal Bi Halal</h2>
 
 <p>
 
-📅 Tanggal  
-<br>
-<strong>11 April 2026</strong>
-
+📅 11 April 2026  
 <br><br>
 
-📍 Lokasi  
+📍 Jl. Kalimaya Barat  
 <br>
-Jl. Kalimaya Barat  
 Klipang Green 2 RT 09
 
 </p>
@@ -207,11 +189,12 @@ Klipang Green 2 RT 09
 <div class="section">
 
 <h2>Menuju Acara</h2>
+
 <h1 id="countdown"></h1>
 
 </div>
 
-<!-- GALERI SLIDER -->
+<!-- GALERI -->
 
 <div class="section">
 
@@ -228,8 +211,8 @@ Klipang Green 2 RT 09
 
 </div>
 
-<button class="nav prev" onclick="prevSlide()">❮</button>
-<button class="nav next" onclick="nextSlide()">❯</button>
+<button class="nav prev">❮</button>
+<button class="nav next">❯</button>
 
 </div>
 
@@ -259,11 +242,11 @@ Klipang Green 2 RT 09
 
 <script>
 
-/* BUKA UNDANGAN */
+/* buka undangan */
 
-function bukaUndangan(){
+document.getElementById("envelope").onclick = function(){
 
-document.getElementById("envelope").classList.add("open")
+this.classList.add("open")
 
 setTimeout(function(){
 
@@ -276,54 +259,52 @@ document.getElementById("musik").play()
 
 }
 
-/* COUNTDOWN */
+/* countdown */
 
-var target=new Date("April 11, 2026 09:00:00").getTime()
+var target = new Date("April 11, 2026 09:00:00").getTime()
 
 setInterval(function(){
 
-var now=new Date().getTime()
-var distance=target-now
+var now = new Date().getTime()
 
-var d=Math.floor(distance/(1000*60*60*24))
-var h=Math.floor((distance%(1000*60*60*24))/(1000*60*60))
-var m=Math.floor((distance%(1000*60*60))/(1000*60))
-var s=Math.floor((distance%(1000*60))/1000)
+var distance = target - now
+
+var d = Math.floor(distance/(1000*60*60*24))
+var h = Math.floor((distance%(1000*60*60*24))/(1000*60*60))
+var m = Math.floor((distance%(1000*60*60))/(1000*60))
+var s = Math.floor((distance%(1000*60))/1000)
 
 document.getElementById("countdown").innerHTML =
 d+" Hari "+h+" Jam "+m+" Menit "+s+" Detik"
 
 },1000)
 
-/* SLIDER GALERI */
+/* slider */
 
 let index = 0
-
-function showSlide(){
-
 const slides = document.getElementById("slides")
 const total = slides.children.length
 
-if(index >= total) index = 0
-if(index < 0) index = total - 1
-
-slides.style.transform = "translateX(" + (-index * 100) + "%)"
-
+function updateSlide(){
+slides.style.transform = "translateX(-"+(index*100)+"%)"
 }
 
-function nextSlide(){
+document.querySelector(".next").onclick = function(){
 index++
-showSlide()
+if(index >= total) index = 0
+updateSlide()
 }
 
-function prevSlide(){
+document.querySelector(".prev").onclick = function(){
 index--
-showSlide()
+if(index < 0) index = total-1
+updateSlide()
 }
 
 setInterval(function(){
 index++
-showSlide()
+if(index >= total) index = 0
+updateSlide()
 },4000)
 
 </script>
