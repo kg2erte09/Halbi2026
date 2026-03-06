@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Halal Bi Halal RT 09 Klipang Green 2</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#f5f5f5;
+text-align:center;
+overflow-x:hidden;
+}
+
+/* COVER */
+
+.cover{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#1c6b57,#38b2ac);
+flex-direction:column;
+color:white;
+}
+
+/* ENVELOPE */
+
+.envelope{
+position:relative;
+width:200px;
+height:120px;
+background:#fff;
+border-radius:6px;
+cursor:pointer;
+}
+
+.envelope:before{
+content:'';
+position:absolute;
+top:-60px;
+left:0;
+width:0;
+height:0;
+border-left:100px solid transparent;
+border-right:100px solid transparent;
+border-bottom:60px solid white;
+transition:1s;
+}
+
+.envelope.open:before{
+transform:rotateX(180deg);
+transform-origin:top;
+}
+
+.envelope-text{
+margin-top:20px;
+font-size:18px;
+}
+
+/* SECTION */
+
+.section{
+padding:60px 20px;
+}
+
+.card{
+background:white;
+padding:30px;
+max-width:700px;
+margin:auto;
+border-radius:12px;
+box-shadow:0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* SLIDER */
+
+.slider{
+max-width:700px;
+margin:auto;
+position:relative;
+overflow:hidden;
+border-radius:12px;
+}
+
+.slides{
+display:flex;
+transition:transform 0.5s ease;
+}
+
+.slides img{
+width:100%;
+flex-shrink:0;
+}
+
+.nav{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:rgba(0,0,0,0.5);
+color:white;
+border:none;
+padding:10px 15px;
+cursor:pointer;
+font-size:20px;
+}
+
+.prev{
+left:10px;
+}
+
+.next{
+right:10px;
+}
+
+/* FORM */
+
+input,textarea{
+width:100%;
+padding:10px;
+margin-top:10px;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
+button{
+padding:12px 25px;
+margin-top:10px;
+border:none;
+border-radius:25px;
+background:#1c6b57;
+color:white;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- MUSIK -->
+<audio id="musik" loop>
+<source src="musik.mp3" type="audio/mp3">
+</audio>
+
+<!-- COVER -->
+<div class="cover" id="cover">
+
+<h1>Halal Bi Halal</h1>
+<h2>RT 09 Klipang Green 2</h2>
+
+<div class="envelope" id="envelope" onclick="bukaUndangan()"></div>
+
+<div class="envelope-text">
+Klik amplop untuk membuka undangan
+</div>
+
+</div>
+
+<!-- ISI UNDANGAN -->
+
+<div id="isi" style="display:none">
+
+<div class="section">
+
+<div class="card">
+
+<h2>Assalamu'alaikum Wr. Wb.</h2>
+
+<p>
+Dalam rangka mempererat tali silaturahmi,
+kami mengundang Bapak/Ibu/Saudara untuk menghadiri
+</p>
+
+<h2>Halal Bi Halal</h2>
+
+<p>
+
+📅 Tanggal  
+<br>
+<strong>11 April 2026</strong>
+
+<br><br>
+
+📍 Lokasi  
+<br>
+Jl. Kalimaya Barat  
+Klipang Green 2 RT 09
+
+</p>
+
+<a href="https://maps.google.com/?q=Jl+Kalimaya+Barat+Klipang+Green+2" target="_blank">
+<button>Lihat Lokasi</button>
+</a>
+
+</div>
+
+</div>
+
+<!-- COUNTDOWN -->
+
+<div class="section">
+
+<h2>Menuju Acara</h2>
+<h1 id="countdown"></h1>
+
+</div>
+
+<!-- GALERI SLIDER -->
+
+<div class="section">
+
+<h2>Galeri Kegiatan Warga</h2>
+
+<div class="slider">
+
+<div class="slides" id="slides">
+
+<img src="foto1.jpg">
+<img src="foto2.jpg">
+<img src="foto3.jpg">
+<img src="foto4.jpg">
+
+</div>
+
+<button class="nav prev" onclick="prevSlide()">❮</button>
+<button class="nav next" onclick="nextSlide()">❯</button>
+
+</div>
+
+</div>
+
+<!-- RSVP -->
+
+<div class="section">
+
+<div class="card">
+
+<h2>Konfirmasi Kehadiran</h2>
+
+<input type="text" placeholder="Nama">
+
+<input type="number" placeholder="Jumlah Hadir">
+
+<textarea placeholder="Pesan"></textarea>
+
+<button>Kirim</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+/* BUKA UNDANGAN */
+
+function bukaUndangan(){
+
+document.getElementById("envelope").classList.add("open")
+
+setTimeout(function(){
+
+document.getElementById("cover").style.display="none"
+document.getElementById("isi").style.display="block"
+
+document.getElementById("musik").play()
+
+},800)
+
+}
+
+/* COUNTDOWN */
+
+var target=new Date("April 11, 2026 09:00:00").getTime()
+
+setInterval(function(){
+
+var now=new Date().getTime()
+var distance=target-now
+
+var d=Math.floor(distance/(1000*60*60*24))
+var h=Math.floor((distance%(1000*60*60*24))/(1000*60*60))
+var m=Math.floor((distance%(1000*60*60))/(1000*60))
+var s=Math.floor((distance%(1000*60))/1000)
+
+document.getElementById("countdown").innerHTML =
+d+" Hari "+h+" Jam "+m+" Menit "+s+" Detik"
+
+},1000)
+
+/* SLIDER GALERI */
+
+let index = 0
+
+function showSlide(){
+
+const slides = document.getElementById("slides")
+const total = slides.children.length
+
+if(index >= total) index = 0
+if(index < 0) index = total - 1
+
+slides.style.transform = "translateX(" + (-index * 100) + "%)"
+
+}
+
+function nextSlide(){
+index++
+showSlide()
+}
+
+function prevSlide(){
+index--
+showSlide()
+}
+
+setInterval(function(){
+index++
+showSlide()
+},4000)
+
+</script>
+
+</body>
+</html>
