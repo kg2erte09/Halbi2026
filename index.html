@@ -21,43 +21,43 @@
 
 <section id="opening">
 
-<div class="overlay">
+<div class="opening-bg"></div>
 
-<h3>Undangan</h3>
+<div class="opening-content">
 
-<h1>Halal Bi Halal</h1>
-
-<p>Warga RT 09 Klipang Green 2</p>
-
-<button onclick="openInvite()">Buka Undangan</button>
-
-</div>
-
-</section>
-
-
-<!-- CONTENT -->
-
-<section id="content">
-
-<button id="musicBtn" onclick="toggleMusic()">🎵 Musik</button>
-
-<h2>Assalamu'alaikum</h2>
-
-<p>
-Dengan penuh kebahagiaan kami mengundang
-Bapak/Ibu/Saudara untuk menghadiri acara
-</p>
+<h3>Undangan Silaturahmi</h3>
 
 <h1>Halal Bi Halal</h1>
 
 <p>RT 09 Klipang Green 2</p>
 
+<button onclick="openInvitation()">Buka Undangan</button>
+
+</div>
+
+</section>
+
+<!-- CONTENT -->
+
+<section id="content">
+
+<button id="musicBtn" onclick="toggleMusic()">🎵</button>
+
+<h2>Assalamu'alaikum Wr. Wb</h2>
+
+<p>
+Dalam rangka mempererat tali silaturahmi,
+kami mengundang Bapak/Ibu/Saudara
+untuk menghadiri acara
+</p>
+
+<h1 class="title">Halal Bi Halal</h1>
+
+<p>Warga RT 09 Klipang Green 2</p>
 
 <!-- COUNTDOWN -->
 
 <div id="countdown"></div>
-
 
 <!-- DETAIL -->
 
@@ -65,13 +65,12 @@ Bapak/Ibu/Saudara untuk menghadiri acara
 
 <h2>Detail Acara</h2>
 
-<p>📅 11 April 2026</p>
+<p>📅 Sabtu, 11 April 2026</p>
 
 <p>📍 Jl. Kalimaya Barat  
 Klipang Green 2 RT 09</p>
 
 </div>
-
 
 <!-- MAP -->
 
@@ -81,28 +80,32 @@ Klipang Green 2 RT 09</p>
 src="https://maps.google.com/maps?q=Klipang%20Green&t=&z=13&ie=UTF8&iwloc=&output=embed">
 </iframe>
 
-
 <!-- GALERI -->
 
-<h2>Galeri Kegiatan</h2>
+<h2>Galeri Kegiatan Warga</h2>
 
 <div class="gallery">
 
-<img src="images/galeri1.jpg">
-<img src="images/galeri2.jpg">
-<img src="images/galeri3.jpg">
-<img src="images/galeri4.jpg">
+<img src="images/galeri1.jpg" onclick="zoom(this)">
+<img src="images/galeri2.jpg" onclick="zoom(this)">
+<img src="images/galeri3.jpg" onclick="zoom(this)">
+<img src="images/galeri4.jpg" onclick="zoom(this)">
 
 </div>
 
+<!-- MODAL FOTO -->
+
+<div id="modal" onclick="closeModal()">
+<img id="modalImg">
+</div>
 
 <!-- RSVP -->
 
 <h2>Konfirmasi Kehadiran</h2>
 
-<form>
+<form class="card">
 
-<input type="text" placeholder="Nama Anda">
+<input type="text" placeholder="Nama">
 
 <select>
 
@@ -111,9 +114,17 @@ src="https://maps.google.com/maps?q=Klipang%20Green&t=&z=13&ie=UTF8&iwloc=&outpu
 
 </select>
 
+<textarea placeholder="Pesan"></textarea>
+
 <button type="submit">Kirim</button>
 
 </form>
+
+<footer>
+
+<p>© 2026 Warga RT 09 Klipang Green 2</p>
+
+</footer>
 
 </section>
 
