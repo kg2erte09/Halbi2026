@@ -253,20 +253,47 @@ max-height:90%;
 border-radius:10px;
 }
 
-/* BUTTON */
-
-button{
-padding:12px 30px;
-border:none;
-border-radius:30px;
-background:linear-gradient(45deg,#d4af37,#f5e9a3);
-cursor:pointer;
-font-weight:bold;
-transition:0.3s;
+/* RSVP FORM */
+#rsvpForm{
+  max-width:400px;
+  margin:30px auto 60px auto;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  background:rgba(20,20,20,0.85);
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.5);
 }
 
-button:hover{
-transform:scale(1.05);
+#rsvpForm input,
+#rsvpForm select,
+#rsvpForm textarea{
+  padding:10px;
+  border-radius:8px;
+  border:none;
+  font-family:'Poppins', sans-serif;
+  font-size:14px;
+}
+
+#rsvpForm button{
+  padding:12px;
+  border-radius:25px;
+  border:none;
+  background:linear-gradient(45deg,#d4af37,#f5e9a3);
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+#rsvpForm button:hover{
+  transform:scale(1.05);
+}
+
+#formMessage{
+  color:#d4af37;
+  text-align:center;
 }
 
 /* FOOTER */
@@ -306,6 +333,7 @@ margin:30px 20px;
 }
 
 }
+
 
 
 
