@@ -68,3 +68,33 @@ const nama = params.get("to");
 if(nama){
 document.getElementById("guest").innerHTML = "Kepada Yth. " + nama;
 }
+// Tangani submit form
+document.getElementById('rsvpForm').addEventListener('submit', function(e){
+  e.preventDefault(); // cegah reload halaman
+
+  // ambil nilai
+  const nama = this.nama.value;
+  const kehadiran = this.kehadiran.value;
+  const jumlah = this.jumlah.value;
+  const pesan = this.pesan.value;
+
+  // contoh: kirim ke Formsubmit (ganti email Anda)
+  const formData = new FormData();
+  formData.append('Nama', nama);
+  formData.append('Kehadiran', kehadiran);
+  formData.append('Jumlah', jumlah);
+  formData.append('Pesan', pesan);
+
+  fetch('https://formsubmit.co/emailanda@gmail.com', {
+    method:'POST',
+    body:formData
+  })
+  .then(response=>{
+    document.getElementById('formMessage').innerText = "Terima kasih! Konfirmasi Anda berhasil dikirim.";
+    this.reset();
+  })
+  .catch(error=>{
+    document.getElementById('formMessage').innerText = "Terjadi kesalahan. Silakan coba lagi.";
+    console.error(error);
+  });
+});
