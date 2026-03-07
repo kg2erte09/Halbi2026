@@ -147,7 +147,7 @@ margin-top:5px;
 font-size:12px;
 
 }
-}
+
 /* CARD */
 
 .card{
@@ -166,16 +166,25 @@ margin:auto;
 
 /* MAP */
 
-iframe{
+.maps-button{
+text-align:center;
+margin-top:20px;
+}
 
-width:80%;
+.maps-button a{
+display:inline-block;
+padding:12px 25px;
+background:#c8a97e;
+color:white;
+text-decoration:none;
+border-radius:30px;
+font-weight:bold;
+font-size:16px;
+transition:0.3s;
+}
 
-height:300px;
-
-border:none;
-
-border-radius:10px;
-
+.maps-button a:hover{
+background:#a88c63;
 }
 
 /* GALERI */
@@ -250,6 +259,7 @@ background:linear-gradient(45deg,#d4af37,#f5e9a3);
 cursor:pointer;
 
 }
+
 
 
 
