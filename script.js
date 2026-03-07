@@ -27,22 +27,23 @@ music.pause();
 
 /* COUNTDOWN */
 
-let target=new Date("April 11, 2026 09:00:00").getTime();
+let targetDate = new Date("April 11, 2026 09:00:00").getTime();
 
 setInterval(function(){
 
-let now=new Date().getTime();
+let now = new Date().getTime();
 
-let distance=target-now;
+let distance = targetDate - now;
 
-let d=Math.floor(distance/(1000*60*60*24));
-let h=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-let m=Math.floor((distance%(1000*60*60))/(1000*60));
-let s=Math.floor((distance%(1000*60))/1000);
+let days = Math.floor(distance / (1000*60*60*24));
+let hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+let minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+let seconds = Math.floor((distance % (1000*60)) / 1000);
 
-document.getElementById("countdown").innerHTML=
-
-d+" Hari "+h+" Jam "+m+" Menit "+s+" Detik";
+document.getElementById("days").innerText = days;
+document.getElementById("hours").innerText = hours;
+document.getElementById("minutes").innerText = minutes;
+document.getElementById("seconds").innerText = seconds;
 
 },1000);
 
@@ -70,5 +71,6 @@ const nama=params.get("to");
 if(nama){
 
 document.getElementById("guest").innerHTML="Kepada Yth. "+nama;
+
 
 }
