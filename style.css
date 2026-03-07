@@ -290,8 +290,15 @@ font-size:24px;
 padding:12px 16px;
 }
 
-.gallery{
-grid-template-columns:repeat(2,1fr);
+.gallery-slider{
+width:220px;
+}
+
+.slides img{
+width:220px;
+height:160px;
+}
+
 }
 
 .card{
@@ -299,5 +306,6 @@ margin:30px 20px;
 }
 
 }
+
 
 
