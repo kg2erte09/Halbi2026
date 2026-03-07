@@ -108,7 +108,7 @@ height:100%;
 
 /* overlay lebih terang */
 
-background:rgba(255,255,255,0.50);
+background:rgba(10,20,30,0.75);
 
 z-index:0;
 
@@ -288,6 +288,7 @@ color:white;
 
 
 }
+
 
 
 
