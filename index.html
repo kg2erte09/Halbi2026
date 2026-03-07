@@ -108,24 +108,20 @@ Klipang Green 2 RT 09</p>
 </div>
 
 <!-- RSVP -->
-<h2>Konfirmasi Kehadiran</h2>
 <section id="rsvp">
   <h2>Konfirmasi Kehadiran</h2>
   <p>Mohon isi konfirmasi kehadiran Anda agar kami dapat mempersiapkan acara dengan baik.</p>
 
-  <form id="rsvpForm" action="https://formsubmit.co/kg2erte09@gmail.com" method="POST">
+  <form id="rsvpForm" action="https://formsubmit.co/emailanda@gmail.com" method="POST">
     
-    <!-- Nama -->
     <input type="text" name="Nama" placeholder="Nama Anda" required>
 
-    <!-- Kehadiran -->
     <select name="Kehadiran" required>
       <option value="">-- Kehadiran --</option>
       <option value="Hadir">Hadir</option>
       <option value="Tidak Hadir">Tidak Hadir</option>
     </select>
 
-    <!-- Jumlah Orang -->
     <select name="Jumlah" required>
       <option value="">-- Jumlah Orang --</option>
       <option value="1">1 Orang</option>
@@ -134,11 +130,12 @@ Klipang Green 2 RT 09</p>
       <option value="4">4 Orang</option>
     </select>
 
-    <!-- Redirect setelah submit -->
-    <input type="hidden" name="_next" value="https://yourdomain.com/thankyou.html">
+    <!-- Redirect ke halaman terima kasih (opsional) -->
     <input type="hidden" name="_captcha" value="false">
 
     <button type="submit">Kirim Konfirmasi</button>
+    
+    <!-- Tempat notifikasi -->
     <p id="formMessage"></p>
 
   </form>
@@ -154,6 +151,7 @@ Klipang Green 2 RT 09</p>
 
 </body>
 </html>
+
 
 
 
