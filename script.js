@@ -27,25 +27,44 @@ music.pause();
 
 /* COUNTDOWN */
 
-let targetDate = new Date("April 11, 2026 09:00:00").getTime();
+const target = new Date("April 11, 2026 09:00:00").getTime();
 
-setInterval(function(){
+function updateClock(){
 
 let now = new Date().getTime();
 
-let distance = targetDate - now;
+let distance = target - now;
 
 let days = Math.floor(distance / (1000*60*60*24));
-let hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
-let minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
-let seconds = Math.floor((distance % (1000*60)) / 1000);
+let hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+let minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+let seconds = Math.floor((distance%(1000*60))/1000);
 
-document.getElementById("days").innerText = days;
-document.getElementById("hours").innerText = hours;
-document.getElementById("minutes").innerText = minutes;
-document.getElementById("seconds").innerText = seconds;
+flip("day",days);
+flip("hour",hours);
+flip("minute",minutes);
+flip("second",seconds);
 
-},1000);
+}
+
+function flip(id,value){
+
+let el=document.getElementById(id);
+
+if(el.innerText!=value){
+
+el.classList.add("flip");
+
+setTimeout(()=>{
+el.innerText=value;
+el.classList.remove("flip");
+},300);
+
+}
+
+}
+
+setInterval(updateClock,1000);
 
 /* ZOOM FOTO */
 
@@ -74,3 +93,4 @@ document.getElementById("guest").innerHTML="Kepada Yth. "+nama;
 
 
 }
+
