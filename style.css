@@ -97,6 +97,17 @@ position:relative;
 z-index:2;
 
 }
+#content{
+display:none;
+}
+
+#opening{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
 /* FLIP CLOCK */
 
 .flip-clock{
@@ -259,6 +270,7 @@ background:linear-gradient(45deg,#d4af37,#f5e9a3);
 cursor:pointer;
 
 }
+
 
 
 
