@@ -9,19 +9,6 @@ document.getElementById("music").play();
 
 /* MUSIC */
 
-function toggleMusic(){
-
-let music=document.getElementById("music");
-
-if(music.paused){
-
-music.play();
-
-}else{
-
-music.pause();
-
-}
 
 }
 
@@ -91,5 +78,6 @@ document.getElementById("guest").innerHTML="Kepada Yth. "+nama;
 
 
 }
+
 
 
