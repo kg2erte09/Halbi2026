@@ -98,3 +98,35 @@ document.getElementById('rsvpForm').addEventListener('submit', function(e){
     console.error(error);
   });
 });
+
+// Tangani submit form
+document.getElementById('rsvpForm').addEventListener('submit', function(e){
+  e.preventDefault(); // cegah reload halaman
+
+  const form = this;
+  const formData = new FormData(form);
+
+  fetch(form.action, {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => {
+    // Tampilkan notifikasi terima kasih
+    const msg = document.getElementById('formMessage');
+    msg.innerText = "Terima kasih! Konfirmasi Anda berhasil dikirim.";
+    msg.classList.add('show');
+
+    // Reset form setelah submit
+    form.reset();
+
+    // Hilangkan notifikasi setelah 5 detik
+    setTimeout(() => { msg.classList.remove('show'); msg.innerText = ""; }, 5000);
+
+  })
+  .catch(error => {
+    const msg = document.getElementById('formMessage');
+    msg.innerText = "Terjadi kesalahan. Silakan coba lagi.";
+    msg.classList.add('show');
+    console.error(error);
+  });
+});
