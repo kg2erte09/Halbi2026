@@ -1,6 +1,6 @@
 body{
 margin:0;
-font-family:'Poppins', sans-serif;
+font-family:'Poppins',sans-serif;
 background:#0d0d0d;
 color:white;
 text-align:center;
@@ -10,34 +10,63 @@ line-height:1.6;
 /* FONT JUDUL */
 
 h1,h2,h3{
-font-family:'Amiri', serif;
+font-family:'Amiri',serif;
+margin:10px 0;
+}
+
+/* BACKGROUND UNTUK OPENING & CONTENT */
+
+#opening,
+#content{
+background:url("images/bg.jpg");
+background-size:cover;
+background-position:center;
+position:relative;
 }
 
 /* OPENING */
 
 #opening{
 height:100vh;
-background:url("images/bg.jpg");
-background-size:cover;
-background-position:center;
 display:flex;
 justify-content:center;
 align-items:center;
-position:relative;
 }
+
+/* OVERLAY */
 
 .overlay{
 position:absolute;
+top:0;
+left:0;
 width:100%;
 height:100%;
 background:rgba(0,0,0,0.6);
 }
+
+/* CONTENT */
+
+#content{
+display:none;
+min-height:100vh;
+padding:120px 20px 60px;
+animation:fadeIn 1s ease;
+}
+
+#content *{
+position:relative;
+z-index:2;
+}
+
+/* OPENING CONTENT */
 
 .opening-content{
 position:relative;
 z-index:2;
 padding:20px;
 }
+
+/* ENVELOPE */
 
 .envelope img{
 width:120px;
@@ -54,30 +83,14 @@ cursor:pointer;
 /* TITLE */
 
 .title{
-font-family:'Amiri', serif;
 color:#d4af37;
 font-size:36px;
 letter-spacing:2px;
 text-transform:uppercase;
 text-shadow:0 3px 10px rgba(0,0,0,0.5);
-margin:10px 0;
 }
 
-/* CONTENT */
-
-#content{
-display:none;
-padding:120px 20px 60px;
-background:url("images/bg.jpg");
-background-size:cover;
-background-position:center;
-animation:fadeIn 1s ease;
-}
-
-#content *{
-position:relative;
-z-index:2;
-}
+/* ANIMATION */
 
 @keyframes fadeIn{
 from{opacity:0}
@@ -227,7 +240,7 @@ font-size:14px;
 opacity:0.8;
 }
 
-/* RESPONSIVE MOBILE */
+/* RESPONSIVE */
 
 @media(max-width:600px){
 
@@ -249,4 +262,3 @@ margin:30px 20px;
 }
 
 }
-
