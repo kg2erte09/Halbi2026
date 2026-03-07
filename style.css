@@ -84,7 +84,7 @@ text-shadow:0 3px 10px rgba(0,0,0,0.5);
 /* CONTENT */
 #content{
 display:none;
-padding-top:120px;
+padding-top:150px;
 text-align:center;
 }
 #content{
@@ -272,6 +272,7 @@ background:linear-gradient(45deg,#d4af37,#f5e9a3);
 cursor:pointer;
 
 }
+
 
 
 
