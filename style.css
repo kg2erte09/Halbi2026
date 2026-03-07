@@ -85,14 +85,13 @@ text-shadow:0 3px 10px rgba(0,0,0,0.5);
 
 #content{
 
-display:none;
-padding:40px 20px;
-
+height:100vh;
 background:url(images/bg.jpg);
 background-size:cover;
 background-position:center;
-background-attachment:fixed;
-
+display:flex;
+justify-content:center;
+align-items:center;
 position:relative;
 
 }
@@ -288,6 +287,7 @@ color:white;
 
 
 }
+
 
 
 
