@@ -266,6 +266,21 @@ border-radius:10px;
   box-shadow:0 8px 25px rgba(0,0,0,0.5);
 }
 
+/* Notifikasi setelah submit */
+#formMessage{
+  color:#d4af37;
+  font-size:14px;
+  text-align:center;
+  margin-top:10px;
+  font-weight:bold;
+  opacity:0;
+  transition:opacity 0.5s;
+}
+
+#formMessage.show{
+  opacity:1;
+}
+
 /* FOOTER */
 
 footer{
@@ -303,6 +318,7 @@ margin:30px 20px;
 }
 
 }
+
 
 
 
