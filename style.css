@@ -66,7 +66,7 @@ margin:10px 0;
 /* CONTENT */
 
 #content{
-display:flex;
+display:none;
 padding:10px 20px 60px;
 background:url("images/bg.jpg");
 background-size:cover;
@@ -249,3 +249,4 @@ margin:30px 20px;
 }
 
 }
+
