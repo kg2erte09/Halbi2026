@@ -7,11 +7,6 @@ document.getElementById("music").play();
 
 }
 
-/* MUSIC */
-
-
-}
-
 /* COUNTDOWN */
 
 const target = new Date("April 11, 2026 09:00:00").getTime();
@@ -19,7 +14,6 @@ const target = new Date("April 11, 2026 09:00:00").getTime();
 function updateClock(){
 
 let now = new Date().getTime();
-
 let distance = target - now;
 
 let days = Math.floor(distance / (1000*60*60*24));
@@ -68,16 +62,9 @@ document.getElementById("modal").style.display="none";
 
 /* NAMA TAMU DARI LINK */
 
-const params=new URLSearchParams(window.location.search);
-
-const nama=params.get("to");
+const params = new URLSearchParams(window.location.search);
+const nama = params.get("to");
 
 if(nama){
-
-document.getElementById("guest").innerHTML="Kepada Yth. "+nama;
-
-
+document.getElementById("guest").innerHTML = "Kepada Yth. " + nama;
 }
-
-
-
