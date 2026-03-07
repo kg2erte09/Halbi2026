@@ -111,44 +111,56 @@ position:relative;
 z-index:2;
 
 }
-/* COUNTDOWN DIGITAL */
+/* FLIP CLOCK */
 
-.countdown{
+.flip-clock{
 
 display:flex;
 justify-content:center;
 gap:15px;
-margin-top:30px;
 flex-wrap:wrap;
+margin-top:30px;
 
 }
 
-.time-box{
+.flip-unit{
+
+text-align:center;
+
+}
+
+.flip-card{
 
 background:#000;
-padding:15px 20px;
-border-radius:10px;
-min-width:70px;
-
-box-shadow:0 0 15px rgba(212,175,55,0.5);
-
-}
-
-.time-box span{
+color:#d4af37;
 
 font-size:32px;
 font-weight:bold;
-color:#d4af37;
-font-family:monospace;
+
+padding:15px 20px;
+
+border-radius:8px;
+
+min-width:60px;
+
+box-shadow:0 5px 15px rgba(0,0,0,0.5);
+
+transition:transform 0.6s;
 
 }
 
-.time-box p{
+.flip-card.flip{
 
-margin:5px 0 0;
+transform:rotateX(360deg);
+
+}
+
+.flip-unit p{
+
+margin-top:5px;
 font-size:12px;
-color:white;
 
+}
 }
 /* CARD */
 
@@ -267,5 +279,6 @@ color:white;
 
 
 }
+
 
 
