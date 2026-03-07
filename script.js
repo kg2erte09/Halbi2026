@@ -130,3 +130,26 @@ document.getElementById('rsvpForm').addEventListener('submit', function(e){
     console.error(error);
   });
 });
+
+function doGet(e){
+  return HtmlService.createHtmlOutput("Web App aktif. Formulir siap menerima submit.");
+}
+
+function doPost(e) {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName("Sheet1"); // ganti nama sheet
+
+  // Ambil data dari form
+  var nama = e.parameter.Nama;
+  var kehadiran = e.parameter.Kehadiran;
+  var jumlah = e.parameter.Jumlah;
+
+  // Timestamp
+  var timestamp = new Date();
+
+  // Tambahkan ke Sheet
+  sheet.appendRow([timestamp, nama, kehadiran, jumlah]);
+
+  // Balikkan response
+  return ContentService.createTextOutput("Terima kasih! Konfirmasi Anda berhasil dikirim.");
+}
