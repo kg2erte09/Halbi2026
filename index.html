@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Halal Bi Halal RT 09</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<audio id="music" loop>
+<source src="music.mp3">
+</audio>
+
+<!-- OPENING -->
+
+<section id="opening">
+
+<div class="overlay"></div>
+
+<div class="opening-content">
+
+<h3>Undangan Silaturahmi</h3>
+
+<h1>Halal Bi Halal</h1>
+
+<p>RT 09 Klipang Green 2</p>
+
+<div class="envelope" onclick="openInvite()">
+<img src="images/envelope.png">
+<p>Klik Amplop</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTENT -->
+
+<section id="content">
+
+<button id="musicBtn" onclick="toggleMusic()">🎵</button>
+
+<h2 id="guest"></h2>
+
+<p>
+Dengan hormat kami mengundang
+Bapak/Ibu/Saudara untuk menghadiri
+</p>
+
+<h1 class="title">Halal Bi Halal</h1>
+
+<p>Warga RT 09 Klipang Green 2</p>
+
+<!-- COUNTDOWN -->
+
+<div id="countdown"></div>
+
+<!-- DETAIL -->
+
+<div class="card">
+
+<h2>Detail Acara</h2>
+
+<p>📅 Sabtu, 11 April 2026</p>
+
+<p>📍 Jl. Kalimaya Barat  
+Klipang Green 2 RT 09</p>
+
+</div>
+
+<!-- MAP -->
+
+<h2>Lokasi</h2>
+
+<iframe
+src="https://maps.google.com/maps?q=Klipang%20Green&t=&z=13&ie=UTF8&iwloc=&output=embed">
+</iframe>
+
+<!-- GALERI -->
+
+<h2>Galeri Warga</h2>
+
+<div class="gallery">
+
+<img src="images/galeri1.jpg" onclick="zoom(this)">
+<img src="images/galeri2.jpg" onclick="zoom(this)">
+<img src="images/galeri3.jpg" onclick="zoom(this)">
+<img src="images/galeri4.jpg" onclick="zoom(this)">
+
+</div>
+
+<div id="modal" onclick="closeModal()">
+<img id="modalImg">
+</div>
+
+<!-- RSVP -->
+
+<h2>Konfirmasi Kehadiran</h2>
+
+<a href="https://forms.gle/" target="_blank">
+<button class="rsvp">Isi Konfirmasi</button>
+</a>
+
+<footer>
+
+<p>RT 09 Klipang Green 2</p>
+
+</footer>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
