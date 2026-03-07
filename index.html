@@ -109,33 +109,40 @@ Klipang Green 2 RT 09</p>
 
 <!-- RSVP -->
 <h2>Konfirmasi Kehadiran</h2>
-<p>Mohon isi konfirmasi kehadiran Anda agar kami dapat mempersiapkan acara dengan baik.</p>
-<form action="https://formsubmit.co/kg2erte09@gmail.com" method="POST">
-<form id="rsvpForm">
+<section id="rsvp">
+  <h2>Konfirmasi Kehadiran</h2>
+  <p>Mohon isi konfirmasi kehadiran Anda agar kami dapat mempersiapkan acara dengan baik.</p>
 
-  <input type="text" name="nama" placeholder="Nama Anda" required>
+  <form id="rsvpForm" action="https://formsubmit.co/emailanda@gmail.com" method="POST">
+    
+    <!-- Nama -->
+    <input type="text" name="Nama" placeholder="Nama Anda" required>
 
-  <select name="kehadiran" required>
-    <option value="">-- Kehadiran --</option>
-    <option value="Hadir">Hadir</option>
-    <option value="Tidak Hadir">Tidak Hadir</option>
-  </select>
+    <!-- Kehadiran -->
+    <select name="Kehadiran" required>
+      <option value="">-- Kehadiran --</option>
+      <option value="Hadir">Hadir</option>
+      <option value="Tidak Hadir">Tidak Hadir</option>
+    </select>
 
-  <select name="jumlah" required>
-    <option value="">-- Jumlah Orang --</option>
-    <option value="1">1 Orang</option>
-    <option value="2">2 Orang</option>
-    <option value="3">3 Orang</option>
-    <option value="4">4 Orang</option>
-  </select>
+    <!-- Jumlah Orang -->
+    <select name="Jumlah" required>
+      <option value="">-- Jumlah Orang --</option>
+      <option value="1">1 Orang</option>
+      <option value="2">2 Orang</option>
+      <option value="3">3 Orang</option>
+      <option value="4">4 Orang</option>
+    </select>
 
-  <textarea name="pesan" placeholder="Ucapan / Pesan" rows="3"></textarea>
+    <!-- Redirect setelah submit -->
+    <input type="hidden" name="_next" value="https://yourdomain.com/thankyou.html">
+    <input type="hidden" name="_captcha" value="false">
 
-  <button type="submit">Kirim Konfirmasi</button>
+    <button type="submit">Kirim Konfirmasi</button>
+    <p id="formMessage"></p>
 
-  <p id="formMessage" style="margin-top:10px; font-size:14px;"></p>
-
-</form>
+  </form>
+</section>
 
 <footer>
 <p>Media Informasi RT 09 Klipang Green 2</p>
@@ -147,6 +154,7 @@ Klipang Green 2 RT 09</p>
 
 </body>
 </html>
+
 
 
 
