@@ -15,7 +15,7 @@ font-family:'Amiri',serif;
 background:url("images/bg.jpg");
 background-size:cover;
 background-position:center;
-position:relative;
+background-attachment:fixed;
 }
 
 #opening{
