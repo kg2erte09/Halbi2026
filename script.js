@@ -16,17 +16,37 @@ function updateClock(){
 let now = new Date().getTime();
 let distance = target - now;
 
-let days = Math.floor(distance/(1000*60*60*24));
+let days = Math.floor(distance / (1000*60*60*24));
 let hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
 let minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+let seconds = Math.floor((distance%(1000*60))/1000);
 
-document.getElementById("day").innerText=days;
-document.getElementById("hour").innerText=hours;
-document.getElementById("minute").innerText=minutes;
+flip("day",days);
+flip("hour",hours);
+flip("minute",minutes);
+flip("second",seconds);
+
+}
+
+function flip(id,value){
+
+let el = document.getElementById(id);
+
+if(el.innerText != value){
+
+el.classList.add("flip");
+
+setTimeout(()=>{
+el.innerText = value;
+el.classList.remove("flip");
+},300);
+
+}
 
 }
 
 setInterval(updateClock,1000);
+updateClock();
 
 /* NAMA TAMU */
 
