@@ -118,6 +118,9 @@ border-radius:15px;
 max-width:400px;
 margin:30px auto;
 }
+.detail-acara{
+margin-top:-15px;
+}
 
 .maps-button a{
 display:inline-block;
