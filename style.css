@@ -201,7 +201,46 @@ color:#d4af37;
 @media(max-width:600px){
 
 .title{
+
+.shimmer{
+font-size:50px;
+font-weight:bold;
+background:linear-gradient(
+90deg,
+#c8a44d 0%,
+#f5e6b3 25%,
+#ffffff 50%,
+#f5e6b3 75%,
+#c8a44d 100%
+);
+background-size:200% auto;
+color:transparent;
+background-clip:text;
+-webkit-background-clip:text;
+animation:goldShimmer 4s linear infinite;
+letter-spacing:2px;
+}
+
+@keyframes goldShimmer{
+
+0%{
+background-position:0% center;
+}
+
+100%{
+background-position:200% center;
+}
+
+}
 font-size:28px;
+}
+
+}
+
+@media(max-width:600px){
+
+.shimmer{
+font-size:36px;
 }
 
 }
