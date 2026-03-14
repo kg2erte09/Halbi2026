@@ -58,6 +58,41 @@ color:#d4af37;
 font-size:36px;
 }
 
+.flip-clock{
+display:flex;
+justify-content:center;
+gap:15px;
+margin:40px 0;
+flex-wrap:wrap;
+}
+
+.flip-box{
+text-align:center;
+}
+
+.flip-card{
+background:#fff;
+color:#000;
+font-size:32px;
+font-weight:bold;
+padding:18px 22px;
+border-radius:12px;
+min-width:70px;
+box-shadow:0 6px 20px rgba(0,0,0,0.4);
+transition:transform 0.4s;
+}
+
+.flip{
+transform:rotateX(180deg);
+}
+
+.flip-box span{
+display:block;
+margin-top:6px;
+font-size:13px;
+opacity:0.8;
+}
+
 .card{
 background:rgba(0,0,0,0.7);
 padding:25px;
