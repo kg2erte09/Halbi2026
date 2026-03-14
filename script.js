@@ -3,7 +3,8 @@ function openInvite(){
 document.getElementById("opening").style.display="none";
 document.getElementById("content").style.display="block";
 
-document.getElementById("music").play();
+const music = document.getElementById("music");
+music.play().catch(()=>{});
 
 }
 
