@@ -15,7 +15,7 @@
 <body>
 
 <audio id="music" loop>
-<source src="music.mp3">
+<source src="music/music.mp3">
 </audio>
 
 <!-- OPENING -->
@@ -27,7 +27,8 @@
 
 <h3>Undangan</h3>
 <h1>Halal Bi Halal RT 09</h1>
-<p>Klipang Green 2, Sendangmulyo, Semarang</p>
+
+<p id="guest"></p>
 
 <div class="envelope" onclick="openInvite()">
 <img src="images/envelope.png">
@@ -51,6 +52,7 @@ Bapak/Ibu/Saudara untuk menghadiri
 <p>Warga RT 09 Klipang Green 2</p>
 
 <!-- COUNTDOWN -->
+
 <h2>Menuju Acara</h2>
 
 <div class="flip-clock">
@@ -72,7 +74,8 @@ Bapak/Ibu/Saudara untuk menghadiri
 
 </div>
 
-<!-- DETAIL -->
+<!-- DETAIL ACARA -->
+
 <div class="card">
 
 <h2>Detail Acara</h2>
@@ -82,17 +85,17 @@ Bapak/Ibu/Saudara untuk menghadiri
 <p>📍 Jl. Kalimaya Barat  
 Klipang Green 2 RT 09</p>
 
-</div>
-
-<!-- MAP -->
 <div class="maps-button">
 <a href="https://maps.app.goo.gl/p2y8pPeD53HkZ5wj9" target="_blank">
-📍 Klik Lokasi Acara
+📍 Lihat Lokasi
 </a>
 </div>
 
+</div>
+
 <!-- GALERI -->
-<h2 class="gallery-title">Galeri Warga</h2>
+
+<h2>Galeri Warga</h2>
 
 <div class="gallery-slider">
 
@@ -101,42 +104,46 @@ Klipang Green 2 RT 09</p>
 <img src="images/galeri2.jpg">
 <img src="images/galeri3.jpg">
 <img src="images/galeri4.jpg">
-<img src="images/galeri5.jpg">
-<img src="images/galeri6.jpg">
 </div>
 
 </div>
 
 <!-- RSVP -->
+
 <section id="rsvp">
-  <h2>Konfirmasi Kehadiran</h2>
-  <p>Mohon isi konfirmasi kehadiran Anda agar kami dapat mempersiapkan acara dengan baik.</p>
 
-  <form id="rsvpForm" action="https://script.google.com/macros/s/AKfycbxQOo1jkigOz3wx-WxdlmxG_85rf2nIdyVsZF-Rg9YE/dev" method="POST" onsubmit="showThankYou(event)">
-    <input type="text" name="Nama" placeholder="Nama Anda" required>
+<h2>Konfirmasi Kehadiran</h2>
 
-    <select name="Kehadiran" required>
-      <option value="">-- Kehadiran --</option>
-      <option value="Hadir">Hadir</option>
-      <option value="Tidak Hadir">Tidak Hadir</option>
-    </select>
+<form id="rsvpForm" action="PASTE_URL_WEB_APP_KAMU" method="POST">
 
-    <select name="Jumlah" required>
-      <option value="">-- Jumlah Orang --</option>
-      <option value="1">1 Orang</option>
-      <option value="2">2 Orang</option>
-      <option value="3">3 Orang</option>
-      <option value="4">4 Orang</option>
-    </select>
+<input type="text" name="Nama" placeholder="Nama Anda" required>
 
-    <button type="submit">Kirim Konfirmasi</button>
+<select name="Kehadiran" required>
+<option value="">-- Kehadiran --</option>
+<option value="Hadir">Hadir</option>
+<option value="Tidak Hadir">Tidak Hadir</option>
+</select>
 
-    <p id="formMessage"></p>
-  </form>
+<select name="Jumlah" required>
+<option value="">-- Jumlah Orang --</option>
+<option value="1">1 Orang</option>
+<option value="2">2 Orang</option>
+<option value="3">3 Orang</option>
+<option value="4">4 Orang</option>
+</select>
+
+<button type="submit">Kirim Konfirmasi</button>
+
+<p id="formMessage"></p>
+
+</form>
+
 </section>
 
 <footer>
+
 <p>Media Informasi RT 09 Klipang Green 2</p>
+
 </footer>
 
 </section>
@@ -145,15 +152,3 @@ Klipang Green 2 RT 09</p>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
