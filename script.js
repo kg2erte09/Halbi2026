@@ -87,10 +87,10 @@ document.getElementById("formMessage").innerText="Terjadi kesalahan. Silakan cob
 
 async function loadRSVP() {
   try {
-    const res = await fetch("https://script.google.com/macros/s/AKfycbxqZExbSZNmrpAMCKyEd1AS8C1qJAnclTFHxyap5m4/dev");
+    const res = await fetch("https://script.google.com/macros/s/AKfycbxqZExbSZNmrpAMCKyEd1AS8C1qJAnclTFHxyap5m4/exec");
     const data = await res.json();
 
-    console.log("DATA RSVP:", data); // debug
+    console.log("DATA RSVP:", data);
 
     let total = data.length;
     let hadir = data.filter(d => d.Kehadiran === "Hadir").length;
