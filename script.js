@@ -87,7 +87,7 @@ document.getElementById("formMessage").innerText="Terjadi kesalahan. Silakan cob
 
 async function loadRSVP() {
   try {
-    const res = await fetch("https://script.google.com/macros/s/AKfycbxqZExbSZNmrpAMCKyEd1AS8C1qJAnclTFHxyap5m4/exec");
+    const res = await fetch("https://script.google.com/macros/s/AKfycbwy1rF2lYdbndS6aeRABhHV9FS6sc6nk5W-c6agwA3WjtrmlhkpENU6opQYAgZo0RuF/exec");
     const data = await res.json();
 
     console.log("DATA RSVP:", data);
@@ -106,3 +106,4 @@ async function loadRSVP() {
 }
 
 loadRSVP();
+setInterval(loadRSVP, 5000);
