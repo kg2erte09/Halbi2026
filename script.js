@@ -84,10 +84,13 @@ document.getElementById("formMessage").innerText="Terjadi kesalahan. Silakan cob
 });
 
 });
+
 async function loadRSVP() {
   try {
-    const res = await fetch("https://script.google.com/macros/s/AKfycbwy1rF2lYdbndS6aeRABhHV9FS6sc6nk5W-c6agwA3WjtrmlhkpENU6opQYAgZo0RuF/exec");
+    const res = await fetch("https://script.google.com/macros/s/AKfycbxqZExbSZNmrpAMCKyEd1AS8C1qJAnclTFHxyap5m4/dev");
     const data = await res.json();
+
+    console.log("DATA RSVP:", data); // debug
 
     let total = data.length;
     let hadir = data.filter(d => d.Kehadiran === "Hadir").length;
@@ -100,21 +103,6 @@ async function loadRSVP() {
   } catch (err) {
     console.error("Gagal load RSVP:", err);
   }
-}
-
-loadRSVP();
-
-async function loadRSVP() {
-  const res = await fetch("https://script.google.com/macros/s/AKfycbwy1rF2lYdbndS6aeRABhHV9FS6sc6nk5W-c6agwA3WjtrmlhkpENU6opQYAgZo0RuF/exec");
-  const data = await res.json();
-
-  let total = data.length;
-  let hadir = data.filter(d => d.Kehadiran === "Hadir").length;
-  let tidak = data.filter(d => d.Kehadiran === "Tidak Hadir").length;
-
-  document.getElementById("totalRsvp").textContent = total;
-  document.getElementById("totalHadir").textContent = hadir;
-  document.getElementById("totalTidak").textContent = tidak;
 }
 
 loadRSVP();
